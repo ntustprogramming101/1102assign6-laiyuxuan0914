@@ -1,7 +1,5 @@
 class Dinosaur extends Enemy {
-  // Requirement #4: Complete Dinosaur Class
-
-  final float TRIGGERED_SPEED_MULTIPLIER = 5;
+   final float TRIGGERED_SPEED_MULTIPLIER = 5;
 
   float currentSpeed = 1f;
   int direction;
@@ -38,10 +36,16 @@ class Dinosaur extends Enemy {
         currentSpeed=1;
          }}
 
-    if (currentSpeed< 0&&player.x<x
-      &&
+    if (currentSpeed< 0&&player.x<x&&
       player.y==y ) {currentSpeed=-5;}
       else if(player.y>y){
         currentSpeed=-1;
          }
   }
+
+  Dinosaur(float x, float y) {
+    super(x, y);
+  }
+
+ 
+}
