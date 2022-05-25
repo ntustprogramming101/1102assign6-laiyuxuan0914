@@ -168,14 +168,7 @@ switch (floor(random (2))){
       case 0: items[i]= new Cabbage(newX, newY); break;
       case 1: items[i]= new Clock(newX, newY); break;
     }
-
-
-		// Requirement #3:
-		// 	- Randomly decide if a cabbage or a clock should appear in a random soil every 4 rows (6 items in total)
-		// 	- Create and store cabbages/clocks in the same items array
-		// 	- You can use the above newX/newY to set their position in constructor
-
-	}
+}
 }
 
 void draw() {
@@ -210,8 +203,7 @@ void draw() {
 	    fill(253,184,19);
 	    ellipse(590,50,120,120);
 
-	    // CAREFUL!
-	    // Because of how this translate value is calculated, the Y value of the ground level is actually 0
+	    
 		pushMatrix();
 		translate(0, max(SOIL_SIZE * -22, SOIL_SIZE * 1 - player.y));
 
@@ -240,14 +232,13 @@ void draw() {
 
 		image(sweethome, 0, SOIL_ROW_COUNT * SOIL_SIZE);
 
-		// Items
-		// Requirement #3: Display and check collision with player for each item in Item[] items
+		
     for(Item i: items){
       if(i == null) continue;
       i.display();
       i.checkCollision(player);
     }
-		// Player
+
 
 		player.update();
 
@@ -257,9 +248,7 @@ void draw() {
 			if(e == null) continue;
 			e.update();
 			e.display();
-			e.checkCollision(player);
-      e.update(player);
-		}
+			e.checkCollision(player);}
 
 		// Caution Sign
 		Enemy nextRowEnemy = getEnemyByRow(player.row + 5);
