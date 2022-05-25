@@ -1,5 +1,5 @@
 class Robot extends Enemy {
-  // Requirement #5: Complete Dinosaur Class
+  
 
   final int PLAYER_DETECT_RANGE_ROW = 2;
   final int LASER_COOLDOWN = 180;
